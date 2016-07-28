@@ -21,7 +21,7 @@ class YtApi
   def create_playlist(name, url, auth)
     channel = create_channel(url)
     name = channel.title
-    vid_ids = channel.videos.where(chart: 'mostPopular').map { |v| v.id }[0..9]
+    vid_ids = channel.videos.where(order: 'viewCount').map { |v| v.id }[0..9]
     create_account(auth)
     playlist = @account.create_playlist(title: name, privacy_status: "public")
     vid_ids.each { |id| playlist.add_video(id) }
@@ -49,6 +49,7 @@ class YtApi
   end
 
   def get_popular_vids(url)
+    create_channel(url).videos.where(order: 'viewCount')
   end
 
   def configure
