@@ -1,0 +1,7 @@
+<%= render 'form' %>
+
+<p>Authorize: <a href='<%= auth_url %>'>oauth</a>
+
+  <% if @auth %>
+    <%= @auth %>
+  <% end %>
