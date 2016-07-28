@@ -4,13 +4,12 @@ class PlaylistsController < ApplicationController
 
   def new
     @playlist = Playlist.new
-    @auth = session[:oauth]
   end
 
-  def create ## URL's MUST be HTTP-ified before saving to the database!!
+  # NOTE: URL's must be in http:// format
+  def create
     @playlist = Playlist.new(whitelisted_playlist_params)
     @playlist.popular_url = gen_pop_url(@playlist.url)
-    # @playlist.popular_url = popular_url if popular_url = gen_pop_url(@playlist.url)
     if @playlist.save
       redirect_to playlist_path(@playlist)
     else

@@ -52,6 +52,7 @@ class YtApi
       config.client_id = ENV['CLIENT_ID']
       config.client_secret = ENV['CLIENT_SECRET']
       config.api_key = ENV['KEY']
+      config.log_level = :debug
     end
   end
 end

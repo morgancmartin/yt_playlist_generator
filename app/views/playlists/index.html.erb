@@ -1,4 +1,8 @@
+<ul>
 <% @playlists.each do |p| %>
-  <%= p.url %>
-  <%= p.popular_url %>
+  <li>
+  <%= link_to "Channel", p.url %>
+  <%= link_to "Playlist", p.popular_url %>
+  </li>
 <% end %>
+</ul>
