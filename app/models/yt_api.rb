@@ -1,4 +1,3 @@
-require_relative 'env'
 require 'rubygems'
 require 'yt'
 
