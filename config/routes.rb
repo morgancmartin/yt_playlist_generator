@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :playlists
 
   get 'oauth' => 'playlists#oauth'
+  get 'reset' => 'playlists#reset'
 end

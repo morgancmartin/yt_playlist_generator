@@ -35,6 +35,10 @@ class YtApi
     @account.playlists.first if @account
   end
 
+  def channel_name(url)
+    create_channel(url).title
+  end
+
   def create_channel(url)
     Yt::Channel.new url: url
   end
