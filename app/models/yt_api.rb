@@ -9,7 +9,7 @@ class YtApi
 
   def initialize
     configure
-    @redirect_uri = 'http://localhost:3000/oauth'
+    @redirect_uri = 'https://pure-retreat-81398.herokuapp.com/oauth'
   end
 
   def authentication_url
