@@ -6,8 +6,9 @@ gem 'rails', '4.2.7'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3'
-  gem 'figaro'
 end
+
+gem 'figaro'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
