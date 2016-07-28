@@ -5,7 +5,11 @@ class YtApi
 
   def initialize
     configure
-    @redirect_uri = 'https://pure-retreat-81398.herokuapp.com/oauth'
+    if Rails.env.development?
+      @redirect_uri = 'http://localhost:3000/oauth'
+    else
+      @redirect_uri = 'https://pure-retreat-81398.herokuapp.com/oauth'
+    end
   end
 
   def authentication_url
@@ -26,10 +30,6 @@ class YtApi
   def playlist_url_from_id(id)
     "https://www.youtube.com/playlist?list=#{id}"
   end
-
-  # def create_playlist(title)
-  #   @account.create_playlist(title: title, privacy_status: "public")
-  # end
 
   def get_last_playlist
     @account.playlists.first if @account
