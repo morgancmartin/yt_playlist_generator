@@ -3,10 +3,6 @@ require 'yt'
 
 class YtApi
 
-  CLIENT_ID = '791272575222-mu57nle6b0iklbds3cfugmop8so8qani.apps.googleusercontent.com'
-  CLIENT_SECRET = 'vyLGKc1aqiqOL9iq7XhhVKh0'
-  KEY = 'AIzaSyAlvGIXaCABWek6d_ztlQxYOX-vQt12jgg'
-
   def initialize
     configure
     @redirect_uri = 'https://pure-retreat-81398.herokuapp.com/oauth'
@@ -53,9 +49,9 @@ class YtApi
 
   def configure
     Yt.configure do |config|
-      config.client_id = CLIENT_ID
-      config.client_secret = CLIENT_SECRET
-      config.api_key = KEY
+      config.client_id = ENV['CLIENT_ID']
+      config.client_secret = ENV['CLIENT_SECRET']
+      config.api_key = ENV['KEY']
     end
   end
 end
