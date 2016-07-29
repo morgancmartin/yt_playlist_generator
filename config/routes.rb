@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # root 'playlists#new'
+  root 'playlists#index'
   resources :playlists
 
   get 'oauth' => 'playlists#oauth'
