@@ -1,3 +1,10 @@
-<a href='<%= @playlist.url %>'><%= @playlist.channelname %> URL</a>
-<a href='<%= @playlist.popular_url %>'>Playlist URL</a>
+<div class="row">
+  <iframe class="col-xs-8 col-xs-offset-3" id="ytplayer" type="text/html" width="640" height="390"
+          src='https://www.youtube.com/embed?listType=playlist&list=<%= @playlist.playlistID %>'
+          frameborder="0"></iframe>
+</div>
 
+<div class="row">
+  <a class="col-xs-2 col-xs-offset-4" href='<%= @playlist.url %>'><%= @playlist.channelname %> URL</a>
+  <a class="col-xs-2 col-xs-offset-2" href='<%= @playlist.popular_url %>'>Playlist URL</a>
+</div>

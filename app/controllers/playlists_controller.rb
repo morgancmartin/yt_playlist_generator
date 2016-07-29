@@ -4,7 +4,7 @@ class PlaylistsController < ApplicationController
 
   def new
     @playlist = Playlist.new
-    if session[:oauth] != session[:lastauth]
+    if session[:oauth] != session[:lastauth] || session[:oauth].nil?
      render :new
     else
       render :oauth
