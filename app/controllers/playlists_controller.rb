@@ -58,6 +58,11 @@ class PlaylistsController < ApplicationController
     redirect_to new_playlist_path
   end
 
+  def delete_user_playlists
+    delete_all_user_playlists
+    redirect_to playlists_path
+  end
+
   private
 
   def whitelisted_playlist_params

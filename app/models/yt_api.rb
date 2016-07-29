@@ -35,6 +35,14 @@ class YtApi
     @account.playlists.first if @account
   end
 
+  def delete_all_playlists(auth)
+    account = create_account(auth)
+    account.playlists.each do |playlist|
+      playlist.delete unless playlist.title == "Liked Videos" || playlist.title == "Favorites"
+    end
+    true
+  end
+
   def channel_name(url)
     create_channel(url).title
   end

@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
   get 'oauth' => 'playlists#oauth'
   get 'reset' => 'playlists#reset'
+  get 'delete_user_playlists' => 'playlists#delete_user_playlists'
 end

@@ -15,4 +15,8 @@ module PlaylistsHelper
     regex = /[=](.*)/
     url.match(regex)[0][1..-1]
   end
+
+  def delete_all_user_playlists
+    YtApi.new.delete_all_playlists(session[:oauth])
+  end
 end
