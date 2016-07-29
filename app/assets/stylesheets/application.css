@@ -63,3 +63,11 @@ html,body
     text-align: center;
     font-size: 18px;
 }
+
+li {
+    font-size: 24px;
+}
+
+.personal-website {
+    font-size: 20px;
+}
