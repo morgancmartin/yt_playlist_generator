@@ -8,6 +8,12 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
+  <header class="row header">
+    <p class="col-xs-2 col-xs-offset-1"><%= link_to "All Playlists", playlists_path %></p>
+    <button type="button" class="col-xs-2 col-xs-offset-2 btn btn-success"><%= link_to "Create a new Playlist", new_playlist_path %></button>
+    <p class="col-xs-2 col-xs-offset-2"><%= link_to "New Auth Token", auth_url %></p>
+    <hr>
+  </header>
 <div id="wrap">
   <div id="main" class="container clear-top">
     <div class="row">
@@ -19,9 +25,6 @@
 </div>
 <footer class="footer">
   <hr>
-  <h2 class="col-xs-offset-4"><%= link_to "All Playlists", playlists_path %></h2>
-  <h1 class="col-xs-offset-4"><%= link_to "Create a new Playlist", new_playlist_path %></h1>
-  <h2 class="col-xs-offset-4"><%= link_to "New Auth Token", auth_url %></h2>
 </footer>
 </body>
 </html>

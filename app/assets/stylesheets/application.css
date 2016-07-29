@@ -14,6 +14,11 @@
  *= require_self
  */
 
+.header {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
 html,body
          {
              height:100%;
@@ -39,3 +44,10 @@ html,body
     padding-top:20px;
     color:#fff;
 } 
+
+#create-link {
+    a {
+        text-decoration-color: green !important;
+        color: green !important;
+    }
+}
