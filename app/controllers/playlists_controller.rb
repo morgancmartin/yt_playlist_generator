@@ -32,6 +32,20 @@ class PlaylistsController < ApplicationController
     @playlists = Playlist.all
   end
 
+  def edit
+    @playlist = Playlist.find(params[:id])
+  end
+
+  def update
+    @playlist = Playlist.find(params[:id])
+    if @playlist.update(whitelisted_playlist_params)
+      redirect_to playlist_path(@playlist)
+    else
+      flash.now[:alert] = "That's not valid input"
+      render :edit
+    end
+  end
+
   def oauth
     session[:oauth] = params[:code]
     redirect_to new_playlist_path
@@ -45,6 +59,6 @@ class PlaylistsController < ApplicationController
   private
 
   def whitelisted_playlist_params
-    params.require(:playlist).permit(:url)
+    params.require(:playlist).permit(:url, :channelname)
   end
 end

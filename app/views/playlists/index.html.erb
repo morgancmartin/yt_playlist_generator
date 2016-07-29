@@ -4,6 +4,8 @@
       <%= link_to p.channelname, p.url %>
       <%= '|' %>
       <%= link_to "Playlist", p.popular_url %>
+      <%= '|' %>
+      <%= link_to "Edit", edit_playlist_path(p.id) %>
     </li>
 <% end %>
 </ul>
