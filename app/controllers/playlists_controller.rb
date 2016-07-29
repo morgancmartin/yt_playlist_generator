@@ -31,6 +31,7 @@ class PlaylistsController < ApplicationController
 
   def index
     @playlists = Playlist.all
+    @last_id = @playlists.last.playlistID if @playlists.any?
   end
 
   def edit
