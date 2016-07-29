@@ -15,6 +15,7 @@ class PlaylistsController < ApplicationController
   def create
     @playlist = Playlist.new(whitelisted_playlist_params)
     @playlist.popular_url = gen_pop_url(@playlist.url)
+    @playlist.playlistID = id_from_url(@playlist.popular_url)
     @playlist.channelname = gen_channel_name(@playlist.url)
     session[:lastauth] = session[:oauth]
     if @playlist.save
@@ -59,6 +60,6 @@ class PlaylistsController < ApplicationController
   private
 
   def whitelisted_playlist_params
-    params.require(:playlist).permit(:url, :channelname)
+    params.require(:playlist).permit(:url, :channelname, :playlistID)
   end
 end

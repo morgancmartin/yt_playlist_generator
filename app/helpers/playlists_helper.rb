@@ -10,4 +10,9 @@ module PlaylistsHelper
   def gen_channel_name(url)
     YtApi.new.channel_name(url)
   end
+
+  def id_from_url(url)
+    regex = /[=](.*)/
+    url.match(regex)[0][1..-1]
+  end
 end
