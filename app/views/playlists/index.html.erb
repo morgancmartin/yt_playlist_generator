@@ -11,7 +11,7 @@
 <ul>
   <% @playlists.each do |p| %>
     <li class="col-xs-offset-4">
-      <%= link_to p.channelname, p.url %>
+      <%= link_to p.channelname, playlist_url(p) %>
       <%= '|' %>
       <%= link_to "Playlist", p.popular_url %>
       <%= '|' %>
